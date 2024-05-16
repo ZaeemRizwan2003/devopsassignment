@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Docker build'){
             steps{
-                bat 'docker build -t zaeemrizwan23/jenkins-integration:latest'
+                bat 'docker build -t zaeemrizwan23/jenkins-integration:latest .'
             }
         }
         stage('login'){
