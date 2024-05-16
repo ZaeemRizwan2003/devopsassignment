@@ -16,10 +16,16 @@ pipeline {
             }
         }
         stage('Docker build'){
-            steps{
-                bat 'docker build -t zaeemrizwan23/jenkins-integration:latest .'
-            }
-        }
+    steps{
+        // Print current directory
+        bat 'echo Current directory: %cd%'
+        bat 'dir'
+        
+        // Run docker build command
+        bat 'docker build -t zaeemrizwan23/jenkins-integration:latest .'
+    }
+}
+
         stage('login'){
             steps{
                 bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stddin'
