@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build'){
+            steps{
+                bat 'npm install'
+            }
+        }
+        stage('test'){
+            steps{
+                bat 'echo "Test is running"'
+            }
+        }
+        stage('deploy'){
+            steps{
+                bat 'echo "Deploying the application"'
+            }
+        }
+    }
+}
