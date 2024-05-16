@@ -25,11 +25,6 @@ pipeline {
                 bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stddin'
             }
         }
-        stage('login'){
-            steps{
-                bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            }
-        }
         stage('push'){
             steps{
                 bat 'docker push zaeemrizwan23/jenkins-integration:latest'
