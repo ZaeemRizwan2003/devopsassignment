@@ -7,12 +7,12 @@ pipeline {
                 bat 'npm install'
             }
         }
-        stage('test'){
+        stage('Test'){
             steps{
                 bat 'echo "Test is running"'
             }
         }
-        stage('deploy'){
+        stage('Deploy'){
             steps{
                 bat 'echo "Deploying the application"'
             }
